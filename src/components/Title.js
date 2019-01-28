@@ -8,9 +8,9 @@ const Title = () => {
 
         <Search style={{margin: 'auto', borderRadius: '0px'}}/>
 
-        <span><Button primary style={{right: '9rem', marginTop: '1rem', background: '#3c89f2', paddingRight: '0.9rem', paddingLeft: '0.9rem', paddingTop: '0.6rem', paddingBottom: '0.6rem', letterSpacing: '0.4px'}}>Log In</Button></span>
+        <span><Button primary style={{marginTop: '1rem', background: '#3c89f2', paddingRight: '0.9rem', paddingLeft: '0.9rem', paddingTop: '0.6rem', paddingBottom: '0.6rem', letterSpacing: '0.4px', transform: 'translateX(-3rem)'}}>Log In</Button></span>
 
-        <span><Button style={{right: '3rem', marginTop: '1rem', background: 'white', color: '#3c89f2', letterSpacing: '0.4px', fontSize: '1.1rem', paddingRight: '0.8rem', paddingLeft: '0.7rem', paddingTop: '0.5rem', paddingBottom: '0.5rem'}}>Sign Up</Button></span>
+        <span><Button style={{marginTop: '1rem', background: 'white', color: '#3c89f2', letterSpacing: '0.4px', fontSize: '1.1rem', paddingRight: '0.8rem', paddingLeft: '0.7rem', paddingTop: '0.5rem', paddingBottom: '0.5rem', transform: 'translateX(-3rem)'}}>Sign Up</Button></span>
     </Menu>
   )
 }
