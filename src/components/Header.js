@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Grid, Header, Image, Button, Divider } from 'semantic-ui-react'
 
+import './Header.css'
+
 import verified from './verified.png'
 
 class Head extends Component {
@@ -27,18 +29,19 @@ class Head extends Component {
   render() {
     return (
       <div>
-        <Grid width="100%" style={{marginTop: '2rem'}}>
-          <Grid.Column width={4}>
+        <Grid width="100%" style={{marginTop: '5rem'}}>
+          <Grid.Column width={5}>
 
-          <Image src={this.state.profilepic} alt="profilepic" style={{borderRadius: '50%', paddingLeft: '2rem', paddingRight: '2rem', paddingTop: '1rem', paddingBottom: '3rem'}}/>
+          <Image src={this.state.profilepic} alt="profilepic" style={{borderRadius: '50%', paddingLeft: '10rem', paddingRight: '2rem', paddingTop: '1rem', paddingBottom: '3rem'}}/>
 
           </Grid.Column>
-          <Grid.Column width={8}>
+          <Grid.Column width={7}>
           <span style={{display: 'flex', flexDirection: 'row'}}>
             <Header as="h1" style={{fontFamily: 'Oxygen', fontSize: '1.8rem', transform: 'translateY(1rem)'}}>{this.state.username}</Header>
             <img src={verified} width="25px" height="20px" style={{paddingLeft: '0.5rem', transform: 'translateY(1rem)', opacity: '0.8'}}/>
             <span>{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}</span>
-            <Button primary className="follow">Follow</Button>
+
+            <span><Button primary className="important">Follow</Button></span>
           </span>
           <br/>
             <span style={{fontSize: '1.2rem'}}><b>{this.state.posts}</b> posts</span>

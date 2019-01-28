@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <Container style={{backgroundColor: '#f8f8f8', width: '100%'}}>
         <Title />
-        <Container style={{paddingLeft: '5rem', paddingRight: '5rem'}}>
+        <Container style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
           <Head />
           <PictureGrid />
         </Container>
