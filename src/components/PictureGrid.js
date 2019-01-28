@@ -23,7 +23,7 @@ class PictureGrid extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.images.map((x, idx) => <img key={idx} src={x} alt={idx} width="350px"/>)}
+        {this.state.images.map((x, idx) => <img key={idx} src={x} alt={idx} width="250px"/>)}
       </div>
     );
   }
