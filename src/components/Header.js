@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import { Grid, Header, Image, Button, Divider } from 'semantic-ui-react'
 
-class Header extends Component {
+import verified from './verified.png'
+
+class Head extends Component {
   state = {
     username: null,
     realname: null,
@@ -15,7 +18,7 @@ class Header extends Component {
       .then(data => this.setState({
         profilepic: data.results[0].picture.large,
         username: data.results[0].login.username,
-        realname: data.results[0].name.first + data.results[0].name.last,
+        realname: data.results[0].name.first.slice(0,1).toUpperCase() + data.results[0].name.first.slice(1) + ' ' + data.results[0].name.first.slice(0,1).toUpperCase() + data.results[0].name.last.slice(1),
         posts: Math.floor(Math.random()*100),
         followers: Math.floor(Math.random()*1000),
         following: Math.floor(Math.random()*200)
@@ -24,15 +27,39 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <img src={this.state.profilepic} alt="profilepic"/>
-        {this.state.username} <br/>
-        {this.state.realname} <br/>
-        {this.state.posts} <br/>
-        {this.state.followers} <br/>
-        {this.state.following} <br/>
+        <Grid width="100%" style={{marginTop: '2rem'}}>
+          <Grid.Column width={4}>
+
+          <Image src={this.state.profilepic} alt="profilepic" style={{borderRadius: '50%', paddingLeft: '2rem', paddingRight: '2rem', paddingTop: '1rem', paddingBottom: '3rem'}}/>
+
+          </Grid.Column>
+          <Grid.Column width={8}>
+          <span style={{display: 'flex', flexDirection: 'row'}}>
+            <Header as="h1" style={{fontFamily: 'Oxygen', fontSize: '1.8rem', transform: 'translateY(1rem)'}}>{this.state.username}</Header>
+            <img src={verified} width="25px" height="20px" style={{paddingLeft: '0.5rem', transform: 'translateY(1rem)', opacity: '0.8'}}/>
+            <span>{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}</span>
+            <Button primary className="follow">Follow</Button>
+          </span>
+          <br/>
+            <span style={{fontSize: '1.2rem'}}><b>{this.state.posts}</b> posts</span>
+            <span>{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}</span>
+
+            <span style={{fontSize: '1.2rem'}}><b>{this.state.followers}</b> followers</span>
+            <span>{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}</span>
+
+            <span style={{fontSize: '1.2rem'}}><b>{this.state.following}</b> following</span>
+            <span>{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}</span>
+
+          <br/>
+          <br/>
+          <span style={{fontSize: '1.2rem'}}><b>{this.state.realname}</b></span>
+          <div>The verified icon is made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+          </Grid.Column>
+        </Grid>
+        <Divider />
       </div>
     )
   }
 }
 
-export default Header
+export default Head

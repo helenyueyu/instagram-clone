@@ -3,16 +3,18 @@ import { Container } from 'semantic-ui-react'
 import './App.css';
 
 import Title from './components/Title'
-import Header from './components/Header'
+import Head from './components/Header'
 import PictureGrid from './components/PictureGrid'
 
 class App extends Component {
   render() {
     return (
-      <Container>
+      <Container style={{backgroundColor: '#f8f8f8', width: '100%'}}>
         <Title />
-        <Header />
-        <PictureGrid />
+        <Container style={{paddingLeft: '5rem', paddingRight: '5rem'}}>
+          <Head />
+          <PictureGrid />
+        </Container>
       </Container>
     )
   }
