@@ -9,7 +9,7 @@ import PictureGrid from './components/PictureGrid'
 class App extends Component {
   render() {
     return (
-      <Container style={{backgroundColor: '#f8f8f8', width: '100%'}}>
+      <Container style={{backgroundColor: '#f8f8f8', width: '100%', height: '100%'}}>
         <Title />
         <Container style={{paddingLeft: '1rem', paddingRight: '1rem'}}>
           <Head />

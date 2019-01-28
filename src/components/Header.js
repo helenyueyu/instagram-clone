@@ -29,10 +29,10 @@ class Head extends Component {
   render() {
     return (
       <div>
-        <Grid width="100%" style={{marginTop: '5rem'}}>
+        <Grid width="100%" style={{marginTop: '5rem', transform: 'translateY(3rem)'}}>
           <Grid.Column width={5}>
 
-          <Image src={this.state.profilepic} alt="profilepic" style={{borderRadius: '50%', paddingLeft: '10rem', paddingRight: '2rem', paddingTop: '1rem', paddingBottom: '3rem'}}/>
+          <Image src={this.state.profilepic} alt="profilepic" style={{borderRadius: '50%', transform: 'translateX(10rem)'}}/>
 
           </Grid.Column>
           <Grid.Column width={7}>
@@ -59,7 +59,7 @@ class Head extends Component {
           <div>The verified icon is made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
           </Grid.Column>
         </Grid>
-        <Divider />
+        <Divider style={{transform: 'translateY(3rem)'}}/>
       </div>
     )
   }

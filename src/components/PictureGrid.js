@@ -22,7 +22,7 @@ class PictureGrid extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{transform: 'translateY(3rem)'}}>
         {this.state.images.map((x, idx) => <img key={idx} src={x} alt={idx} width="250px" style={{padding: '1rem'}}/>)}
       </div>
     );
