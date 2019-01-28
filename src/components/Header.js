@@ -9,9 +9,6 @@ class Head extends Component {
   state = {
     username: null,
     realname: null,
-    posts: null,
-    followers: null,
-    following: null,
     profilepic: null
   }
   componentDidMount() {
@@ -21,9 +18,7 @@ class Head extends Component {
         profilepic: data.results[0].picture.large,
         username: data.results[0].login.username,
         realname: data.results[0].name.first.slice(0,1).toUpperCase() + data.results[0].name.first.slice(1) + ' ' + data.results[0].name.first.slice(0,1).toUpperCase() + data.results[0].name.last.slice(1),
-        posts: Math.floor(Math.random()*100),
-        followers: Math.floor(Math.random()*1000),
-        following: Math.floor(Math.random()*200)
+        posts: Math.floor(Math.random()*100)
       }))
   }
   render() {
@@ -44,19 +39,19 @@ class Head extends Component {
             <span><Button primary className="important">Follow</Button></span>
           </span>
           <br/>
-            <span style={{fontSize: '1.2rem'}}><b>{this.state.posts}</b> posts</span>
+            <span style={{fontSize: '1.2rem'}}><b>{this.props.posts}</b> posts</span>
             <span>{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}</span>
 
-            <span style={{fontSize: '1.2rem'}}><b>{this.state.followers}</b> followers</span>
+            <span style={{fontSize: '1.2rem'}}><b>{this.props.followers}</b> followers</span>
             <span>{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}</span>
 
-            <span style={{fontSize: '1.2rem'}}><b>{this.state.following}</b> following</span>
+            <span style={{fontSize: '1.2rem'}}><b>{this.props.following}</b> following</span>
             <span>{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}</span>
 
           <br/>
           <br/>
           <span style={{fontSize: '1.2rem'}}><b>{this.state.realname}</b></span>
-          <div>The verified icon is made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+          <div>The verified icon is made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>.</div>
           </Grid.Column>
         </Grid>
         <Divider style={{transform: 'translateY(3rem)'}}/>

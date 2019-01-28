@@ -2,10 +2,13 @@ import React, { Component } from 'react'
 
 import Picture from './Picture'
 
+
 class PictureGrid extends Component {
   state = {
     images: [],
-    err: []
+    err: [],
+    hearts: Array.from({length: this.props.posts}, () => Math.floor(Math.random() * (this.props.followers + this.props.following)/2 * .3)),
+    comments: Array.from({length: this.props.posts}, () => Math.floor(Math.random() * (this.props.followers + this.props.following)/2 * 0.1))
   }
   componentDidMount() {
     for (let i = 15; i < 115; i++) {
@@ -23,9 +26,13 @@ class PictureGrid extends Component {
     }
   }
   render() {
+    console.log(this.state.hearts)
+    console.log(typeof this.state.hearts)
     return (
       <div className="App" style={{transform: 'translateY(3rem)'}}>
-        {this.state.images.map((x, idx) => <Picture key={idx} src={x} index={idx}/>)}
+        {this.state.images.map((x, idx) =>
+          <Picture key={idx} src={x} index={idx} hearts={this.state.hearts[idx]}
+          comments={this.state.comments[idx]}/>)}
       </div>
     );
   }

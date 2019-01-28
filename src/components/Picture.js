@@ -26,9 +26,14 @@ class Picture extends Component {
     }
     return (
       <React.Fragment>
-        <img key={this.props.key} src={this.props.src} alt={this.props.idx} width="250px" style={(this.state.shaded) ? shadedStyle : defaultStyle}
+        <img key={Math.random()} src={this.props.src} alt={this.props.idx} width="250px" style={(this.state.shaded) ? shadedStyle : defaultStyle}
         onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave} />
-        <span style={{position: 'absolute', transform: 'translate(-12rem, 5rem)'}}><i class="fas fa-heart"></i>{Math.floor(Math.random()*100)}<i class="fas fa-comment"></i>{Math.floor(Math.random()*100)}</span>
+        <span style={{position: 'absolute', transform: 'translate(-12rem, 5rem)'}}>
+        <i className="fas fa-heart"></i>
+            {this.props.hearts}
+        <i className="fas fa-comment"></i>
+            {this.props.comments}
+        </span>
       </React.Fragment>
     )
   }
