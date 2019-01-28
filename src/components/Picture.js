@@ -28,12 +28,16 @@ class Picture extends Component {
       <React.Fragment>
         <img key={Math.random()} src={this.props.src} alt={this.props.idx} width="250px" style={(this.state.shaded) ? shadedStyle : defaultStyle}
         onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave} />
-        <span style={{position: 'absolute', transform: 'translate(-12rem, 5rem)'}}>
+        {this.state.shaded &&  <span style={{position: 'absolute', transform: 'translate(-13.5rem, 10rem)', fontSize: '1.3rem'}}>
+
         <i className="fas fa-heart"></i>
-            {this.props.hearts}
+            {'\u00A0\u00A0'}
+            {this.props.hearts} {'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}
         <i className="fas fa-comment"></i>
+            {'\u00A0\u00A0'}
             {this.props.comments}
         </span>
+        }
       </React.Fragment>
     )
   }

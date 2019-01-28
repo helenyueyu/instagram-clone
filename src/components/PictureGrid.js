@@ -8,7 +8,7 @@ class PictureGrid extends Component {
     images: [],
     err: [],
     hearts: Array.from({length: this.props.posts}, () => Math.floor(Math.random() * (this.props.followers + this.props.following)/2 * .3)),
-    comments: Array.from({length: this.props.posts}, () => Math.floor(Math.random() * (this.props.followers + this.props.following)/2 * 0.1))
+    comments: Array.from({length: this.props.posts}, () => Math.floor(Math.random() * (this.props.followers + this.props.following)/2 * 0.05))
   }
   componentDidMount() {
     for (let i = 15; i < 115; i++) {
